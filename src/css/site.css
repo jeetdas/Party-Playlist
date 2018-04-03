@@ -1,0 +1,20 @@
+html, body {
+}
+
+#selectRoom {
+    position: relative;
+    top: 25vh;
+}
+
+#selectRoom .jumbotron:hover {
+    background-color: rgba(46, 46, 46, 0.7) !important;
+}
+
+#selectRoom * {
+    text-decoration: none !important;
+}
+
+#selectRoom .jumbotron .title {
+    color: #ffffff;
+    text-align: center;
+}
