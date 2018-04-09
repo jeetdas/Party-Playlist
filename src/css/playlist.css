@@ -4,7 +4,89 @@
     right: 0;
     top: 0;
     height: 100%;
-    width: 20vw;
+    min-width: 300px;
+    max-width: 300px;
+}
+#roomCodeFooter {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 60px;
+    border-right: 1px solid #bababa;
+    text-align: center;
+    line-height: 60px;
+    width: calc(100% - 300px);
+    vertical-align: middle;
+}
+#roomCodeFooter > .code {
+    font-size: 22px;
+    color: #ffffff;
+}
+#roomCodeFooter > .code:before {
+    content: "Sharable code: ";
+    color: #bbbbbb;
+}
+#playlistSidebar .queue {
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+/* width */
+#playlistSidebar .queue::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+#playlistSidebar .queue::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    background: #aaaaaa;
+}
+
+/* Handle */
+#playlistSidebar .queue::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+#playlistSidebar .queue::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+#playlistSidebar .queue > .item {
+    width: 100%;
+    height: auto;
+    padding: 5px 10px 5px 10px;
+    border-bottom: 1px solid #bababa;
+    line-height: 1px;
+}
+#playlistSidebar .queue > .item .item-thumbnail {
+    width: 100%;
+    height: 80px;
+}
+#playlistSidebar .queue > .item .item-thumbnail img {
+    width: 100%;
+    height: 100%;
+}
+#playlistSidebar .queue > .item .item-details {
+    width: 100%;
+    height: 80px;
+    line-height: 25px;
+    vertical-align: middle;
+}
+#playlistSidebar .queue > .item .item-details > .title {
+    color: #ffffff;
+    font-size: 18px;
+    text-align: left;
+}
+#playlistSidebar .queue > .item .item-details > .added-by {
+    color: #f0f0f0;
+    font-size: 12px;
+    text-align: left;
+}
+#playlistSidebar .queue > .item .item-details > .added-by:before {
+    content: "Added by ";
+    color: #bbbbbb;
 }
 #playlistSlider {
     display: none;
