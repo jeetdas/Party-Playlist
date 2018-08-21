@@ -1,15 +1,99 @@
 html, body {
 }
 
+.navbar {
+    height: 56px;
+}
+
 #selectRoom {
     position: relative;
-    top: 25vh;
+    height: calc(100vh - 56px);
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 #selectRoom .selectionBox:hover {
     background-color: rgba(46, 46, 46, 0.7) !important;
 }
 
-#selectRoom * {
+#selectRoom .room {
+    display: block;
+    width: 100%;
+    height: auto;
     text-decoration: none !important;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#selectRoom .room > .roomBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 232, 161, 0.75);
+    padding: 10px;
+    height: 200px;
+    width: 100%;
+}
+#selectRoom .room > [data-room]:after {
+    color: #fafafa;
+    background-color: #ffe8a1;
+    box-shadow: 1px 1px 50px 1px #ffe8a1;
+    width: 100%;
+    filter: blur(4px);
+    border-radius: 25px;
+    padding: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-size: 5em;
+    text-align: center;
+    line-height: 1em;
+    transition: filter 0.25s ease-in-out,
+                opacity 0.25s ease-in-out,
+                background-color 0.1s ease-in-out;
+}
+#selectRoom .room > [data-room="Create"]:after {
+    content: "Create Room";
+}
+#selectRoom .room > [data-room="Join"]:after {
+    content: "Join";
+}
+
+#selectRoom .room:active > [data-room]:after {
+    background-color: rgba(255, 202, 101, 0.5);
+}
+
+#selectRoom .room > [data-room] > .roomBtnHoverContent {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+}
+
+#selectRoom .room > [data-room] > .roomBtnHoverContent > .growInputGroup {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+}
+#selectRoom .room > [data-room] > .roomBtnHoverContent > .growInputGroup > label {
+    font-size: 2em;
+    color: #414141;
+}
+
+#selectRoom .room:hover > [data-room]:after {
+    filter: blur(0px);
+    box-shadow: unset;
+}
+
+#selectRoom .room:focus {
+
+}
+#selectRoom .room:focus > [data-room="Join"]:after {
+    opacity: 0;
+}
+#selectRoom .room:focus > [data-room="Join"] > .roomBtnHoverContent {
+    opacity: 1;
 }
