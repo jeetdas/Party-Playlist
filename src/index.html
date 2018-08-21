@@ -9,26 +9,18 @@
     <link rel="stylesheet" href="css/bootstrap.css" />
     <script src="js/jquery-v3.3.1.js"></script>
     <script src="js/bootstrap.bundle.js"></script>
-    <script src="js/playlist.js"></script>
+    <script src="js/index.js"></script>
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-        <a href="index.html" class="navbar-brand">Party Playlist</a>
-    </nav>
-    <div class="container">
+    <div id="particles-js"></div>
+    <script src="js/particles.js"></script>
+    <div id="mainContent" class="container">
         <div id="selectRoom">
-            <a href="#">
-                <div class="roomBtn" data-room="Create"></div>
+            <a class="room" href="#" data-room="Create">
+                <div class="roomBtn"></div>
             </a>
-            <a href="#">
-                <div class="roomBtn" data-room="Join">
-                    <div class="roomBtnHoverContent">
-                        <div class="growInputGroup">
-                            <label for="roomJoinCodeInput">Room Code</label>
-                            <input id="roomJoinCodeInput" type="text" class="growInput" />
-                        </div>
-                    </div>
-                </div>
+            <a class="room" href="#" data-room="Join">
+                <div class="roomBtn"></div>
             </a>
         </div>
     </div>

@@ -1,8 +1,21 @@
-html, body {
+body {
+    background: linear-gradient(to right, #EE5A24, #A12027);
 }
 
 .navbar {
     height: 56px;
+}
+
+#particles-js {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    filter: blur(5px);
+}
+
+#mainContent {
+    z-index: 1050;
 }
 
 #selectRoom {
@@ -33,21 +46,20 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(255, 232, 161, 0.75);
-    padding: 10px;
-    height: 200px;
+    border-radius: 10px;
+    height: 250px;
     width: 100%;
 }
-#selectRoom .room > [data-room]:after {
+#selectRoom .room > .roomBtn:after {
     color: #fafafa;
-    background-color: #ffe8a1;
-    box-shadow: 1px 1px 50px 1px #ffe8a1;
+    background-color: #212529;
+    box-shadow: 1px 1px 25px 1px #ffe8a1;
     width: 100%;
-    filter: blur(4px);
+    filter: blur(1px);
     border-radius: 25px;
-    padding: 30px;
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-left: 25px;
+    margin-right: 25px;
+    padding: 40px;
     font-size: 5em;
     text-align: center;
     line-height: 1em;
@@ -55,45 +67,30 @@ html, body {
                 opacity 0.25s ease-in-out,
                 background-color 0.1s ease-in-out;
 }
-#selectRoom .room > [data-room="Create"]:after {
+
+#selectRoom .room[data-room="Create"] > .roomBtn:after {
     content: "Create Room";
 }
-#selectRoom .room > [data-room="Join"]:after {
-    content: "Join";
+#selectRoom .room[data-room="Join"] > .roomBtn:after {
+    content: "Join Room";
 }
 
-#selectRoom .room:active > [data-room]:after {
-    background-color: rgba(255, 202, 101, 0.5);
+#selectRoom .room[data-room]:active > .roomBtn:after {
+    background-color: #2c2c2c;
+    filter: blur(0px);
 }
 
-#selectRoom .room > [data-room] > .roomBtnHoverContent {
-    position: absolute;
-    opacity: 0;
-    transition: opacity 0.25s ease-in-out;
-}
-
-#selectRoom .room > [data-room] > .roomBtnHoverContent > .growInputGroup {
+.growInputGroup {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     text-align: center;
 }
-#selectRoom .room > [data-room] > .roomBtnHoverContent > .growInputGroup > label {
+.growInputGroup > label {
     font-size: 2em;
     color: #414141;
 }
-
-#selectRoom .room:hover > [data-room]:after {
-    filter: blur(0px);
-    box-shadow: unset;
-}
-
-#selectRoom .room:focus {
-
-}
-#selectRoom .room:focus > [data-room="Join"]:after {
-    opacity: 0;
-}
-#selectRoom .room:focus > [data-room="Join"] > .roomBtnHoverContent {
-    opacity: 1;
+.growInputGroup > input {
+    background-color: unset;
+    border: unset;
 }
