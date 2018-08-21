@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>YouTube Playlist</title>
+    <title>Party Playlist</title>
 
     <link rel="stylesheet" href="css/site.css" />
     <link rel="stylesheet" href="css/playlist.css" />
@@ -13,30 +13,23 @@
 </head>
 <body>
     <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-        <a href="#" class="navbar-brand">YouTube Playlist</a>
+        <a href="index.html" class="navbar-brand">Party Playlist</a>
     </nav>
-    <div id="selectRoom">
-        <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
-                <a href="room-code.html">
-                    <div class="jumbotron bg-dark selectionBox">
-                        <h1 class="title text-light text-center">Create a room</h1>
+    <div class="container">
+        <div id="selectRoom">
+            <a href="#">
+                <div class="roomBtn" data-room="Create"></div>
+            </a>
+            <a href="#">
+                <div class="roomBtn" data-room="Join">
+                    <div class="roomBtnHoverContent">
+                        <div class="growInputGroup">
+                            <label for="roomJoinCodeInput">Room Code</label>
+                            <input id="roomJoinCodeInput" type="text" class="growInput" />
+                        </div>
                     </div>
-                </a>
-            </div>
-            <div class="col-md-3"></div>
-        </div>
-        <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-6">
-                <a href="room-code.html">
-                    <div class="jumbotron bg-dark selectionBox">
-                        <h1 class="title text-light text-center">Join a room</h1>
-                    </div>
-                </a>
-            </div>
-            <div class="col-md-3"></div>
+                </div>
+            </a>
         </div>
     </div>
 </body>
