@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 	"github.com/gorilla/websocket"
-	"github.com/gorilla/mux"
+	//"github.com/gorilla/mux" // To parse arguments sent in
 )
 
 var clients = make(map[*websocket.Conn]bool)
@@ -23,7 +23,7 @@ type YTSong struct {
 }
 
 func main() {
-	fs := http.FileServer(http.Dir("../public"))
+	fs := http.FileServer(http.Dir("../Party-Playlist/src/"))
 	http.Handle("/", fs)
 
 	http.HandleFunc("/ws", handleConnections)
@@ -60,6 +60,7 @@ func handleConnections(w http.ResponseWriter, r *http.Request) {
 }
 
 func handleNewRequests() {
+	log.Printf("This bitch got connected")
 	for {
 		ytsong := <-broadcast
 		for client := range clients {
