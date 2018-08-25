@@ -1,20 +1,92 @@
-html, body {
+body {
+    background: linear-gradient(to right, #EE5A24, #A12027);
+}
+
+#particles-js {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    filter: blur(2px);
+}
+
+#mainContent {
+    z-index: 1050;
 }
 
 #selectRoom {
     position: relative;
-    top: 25vh;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-#selectRoom .jumbotron:hover {
+#selectRoom .selectionBox:hover {
     background-color: rgba(46, 46, 46, 0.7) !important;
 }
 
-#selectRoom * {
+#selectRoom .room {
+    display: block;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    height: auto;
     text-decoration: none !important;
 }
 
-#selectRoom .jumbotron .title {
-    color: #ffffff;
+#selectRoom .room > .roomBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    height: 100%;
+    width: inherit;
+}
+#selectRoom .room > .roomBtn:after {
+    color: #fafafa;
+    background-color: #212529;
+    box-shadow: 1px 1px 25px 1px #ffe8a1;
+    width: inherit;
+    height: 100%;
+    filter: blur(1px);
+    border-radius: 20px;
+    margin-left: 25px;
+    margin-right: 25px;
+    font-size: 5em;
     text-align: center;
+    line-height: 1em;
+    padding: 40px;
+    transition: filter 0.1s ease-in-out,
+                opacity 0.25s ease-in-out,
+                background-color 0.05s ease-in-out;
+}
+
+#selectRoom .room[data-room="Create"] > .roomBtn:after {
+    content: "Create Room";
+}
+#selectRoom .room[data-room="Join"] > .roomBtn:after {
+    content: "Join Room";
+}
+
+#selectRoom .room[data-room]:hover > .roomBtn:after {
+    background-color: #2c2c2c;
+    filter: blur(0px);
+}
+
+.growInputGroup {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.growInputGroup > label {
+    font-size: 2em;
+    color: #313131;
+}
+.growInputGroup > input {
+    background-color: unset;
+    border: unset;
 }
