@@ -1,0 +1,44 @@
+<html>
+    <body>
+        <center>
+            <h3>Data transfer</h3>
+            <pre id="data_packs"></pre>
+            <input placeholder="Image" id="image" type="text">
+            <input placeholder="Title" id="title" type="text">
+            <input placeholder="Artist" id="artist" type="text">
+          </center>
+          <script>
+            var url = "ws://" + window.location.host + "/ws";
+            console.log("URL: " + url);
+            var ws = new WebSocket(url);
+            
+            var data_packs = document.getElementById("data_packs");
+
+            var image = document.getElementById("image");
+            var title = document.getElementById("title");
+            var artist = document.getElementById("artist");
+      
+            ws.onmessage = function (msg) {
+              // This method gets called when a message is received
+              var mess = JSON.parse(msg.data);
+              let logMessage = JSON.stringify(mess);
+              console.log("This was the message received: " + logMessage);
+              data_packs.innerText += "-> " + mess.image + ">" + mess.title + ">" + mess.artist + "\n";
+            };
+      
+            artist.onkeydown = function (e) {
+              if (e.keyCode === 13 && artist.value !== "") {
+                  console.log("Sending some stuff");
+                  ws.send(JSON.stringify({
+                      image: image.value,
+                      title: title.value,
+                      artist: artist.value
+                  }));
+                  image.value = "";
+                  title.value = "";
+                  artist.value = "";
+              }
+            };
+          </script>
+    </body>
+</html>
