@@ -60,7 +60,6 @@ func handleConnections(w http.ResponseWriter, r *http.Request) {
 }
 
 func handleNewRequests() {
-	log.Printf("This bitch got connected")
 	for {
 		ytsong := <-broadcast
 		for client := range clients {
