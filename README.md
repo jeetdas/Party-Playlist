@@ -11,7 +11,7 @@ A web application that allows sharing of YouTube playlists, with a simple and ea
 3. Shared playlists can be joined by any number of users, who can add new videos and vote on the next song.
 
 ### To run application
-Run 'go run main.go' in src/ of the application directory
+Run 'go run main.go' in the application directory
 
 ## Implementation
 
