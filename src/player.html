@@ -3,26 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <title>YouTube Playlist</title>
+
     <link rel="stylesheet" href="css/site.css" />
     <link rel="stylesheet" href="css/playlist.css" />
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <!-- Popper JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-
-    <!-- Latest compiled JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <script src="js/jquery-v3.3.1.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
     <script src="js/playlist.js"></script>
 </head>
 <body>
     <div id="playlistSidebar" class="bg-dark">
-
+        <div class="queue">
+            <div class="item">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="item-thumbnail">
+                            <img src="" />
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="item-details">
+                            <div class="title">Cheat Codes - No Promises</div>
+                            <div class="added-by">Matthew Downs</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="item-thumbnail">
+                            <img src="" />
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="item-details">
+                            <div class="title">Nicki Minaj - Superbass</div>
+                            <div class="added-by">Jeet Das</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="item-thumbnail">
+                            <img src="" />
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="item-details">
+                            <div class="title">Twenty One Pilots - Car Radio</div>
+                            <div class="added-by">Matthew Downs</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div id="playlistSlider" class="bg-dark">
         <div class="preSlider">
@@ -32,6 +69,9 @@
         <div class="proSlider">
 
         </div>
+    </div>
+    <div id="roomCodeFooter" class="bg-secondary">
+        <div class="code">123abc</div>
     </div>
 </body>
 </html>
