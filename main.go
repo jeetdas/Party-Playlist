@@ -4,6 +4,7 @@ import (
 	"log"
 	"net/http"
 	"github.com/gorilla/websocket"
+	"os"
 	//"github.com/gorilla/mux" // To parse arguments sent in
 )
 
@@ -30,8 +31,12 @@ func main() {
 
 	go handleNewRequests()
 
-	log.Println("Http server started on :8000")
-	err := http.ListenAndServe(":5000", nil)
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = ":8000"
+	}
+	log.Println("Http server started on " + port)
+	err := http.ListenAndServe(port, nil)
 	if err != nil {
 		log.Fatal("ListenAndServe: ", err)
 	}
