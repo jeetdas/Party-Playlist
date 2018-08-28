@@ -1,0 +1,12 @@
+{
+	"ImportPath": "Party-Playlist",
+	"GoVersion": "go1.10",
+	"GodepVersion": "v80",
+	"Deps": [
+		{
+			"ImportPath": "github.com/gorilla/websocket",
+			"Comment": "v1.3.0-5-g66b9c49",
+			"Rev": "66b9c49e59c6c48f0ffce28c2d8b8a5678502c6d"
+		}
+	]
+}
