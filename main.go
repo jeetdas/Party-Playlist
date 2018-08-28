@@ -24,7 +24,7 @@ type YTSong struct {
 }
 
 func main() {
-	fs := http.FileServer(http.Dir("/app/"))
+	fs := http.FileServer(http.Dir("src/"))
 	http.Handle("/", fs)
 
 	http.HandleFunc("/ws", handleConnections)
