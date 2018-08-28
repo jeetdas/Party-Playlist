@@ -33,8 +33,9 @@ func main() {
 
 	port := os.Getenv("PORT")
 	if port == "" {
-		port = ":8000"
+		port = "8000"
 	}
+	port = ":" + port
 	log.Println("Http server started on " + port)
 	err := http.ListenAndServe(port, nil)
 	if err != nil {
