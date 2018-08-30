@@ -73,30 +73,48 @@
               var mess = JSON.parse(msg.data);
               let logMessage = JSON.stringify(mess);
               console.log("This was the message received: " + logMessage);
-              data_packs.innerText += "-> " + mess.image + ">" + mess.title + ">" + mess.artist + "\n";
-              playlist.push(mess.artist);
-              if (playerState == YT.PlayerState.ENDED) {
-                  player.loadVideoById({
+              if (mess.artist != "") {
+                data_packs.innerText += "-> " + mess.image + ">" + mess.title + ">" + mess.artist + "\n";
+                playlist.push(mess.artist);
+                if (playerState == YT.PlayerState.ENDED) {
+                    player.loadVideoById({
                         'videoId': playlist[++currentPlaying],
                         'suggestedQuality': 'large'
                     });
                     player.playVideo();
+                }
               }
             };
       
             artist.onkeydown = function (e) {
               if (e.keyCode === 13 && artist.value !== "") {
-                  console.log("Sending some stuff");
-                  ws.send(JSON.stringify({
-                      image: image.value,
-                      title: title.value,
-                      artist: artist.value
-                  }));
-                  image.value = "";
-                  title.value = "";
-                  artist.value = "";
+                console.log("Sending some stuff");
+                ws.send(JSON.stringify({
+                    image: image.value,
+                    title: title.value,
+                    artist: artist.value
+                }));
+                image.value = "";
+                title.value = "";
+                artist.value = "";
               }
             };
+
+            var timerID = 0; 
+            function keepAlive() {
+                var timeout = 20000;  
+                if (ws.readyState == ws.OPEN) {
+                    console.log("Keeping it alive");
+                    ws.send(JSON.stringify({
+                        image: "",
+                        title: "",
+                        artist: ""
+                    }));
+                }
+                timerId = setTimeout(keepAlive, timeout);  
+            }
+
+            keepAlive();
 
             /**
              * YouTube search API
