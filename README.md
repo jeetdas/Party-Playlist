@@ -15,7 +15,7 @@ Run 'go run main.go' in the application directory
 
 ## Implementation
 
-### Database (PostgreSQL):
+### Database (PostgreSQL): [WIP]
 Playlist metadata is stored in PostgreSQL (sharable code, admin cookie information, etc).
 Individual playlist information is stored in another table (songs in the playlist, votes, etc).
 
