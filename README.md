@@ -1,6 +1,6 @@
 # Party Playlist
 
-A web application that allows sharing of YouTube playlists, with a simple and easy to use UI. The application implements real-time sharing of playlists across devices and allows multiple users to add and update items together. The application is implemented using sockets on a Go infastructure.
+A web application that allows sharing of YouTube playlists, with a simple and easy to use UI. The application implements real-time sharing of playlists across devices and allows multiple users to add and update items together. The application is implemented using sockets on Go.
 
 ## Usage
 
